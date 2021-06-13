@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="jonathon.kindle.AD340">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +11,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HW1">
-        <activity android:name=".MainActivity" android:windowSoftInputMode="adjustPan">
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MovieListActivity"
+            android:label="Movies"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MovieDetails"
+            android:label="Movie Details"
+            android:parentActivityName=".MovieListActivity" />
+
+<!--        <activity -->
+<!--            android:name=".RecyclerActivity"-->
+<!--            android:label="Movies w/ Recycler View"-->
+<!--            android:parentActivityName=".MainActivity" />-->
+
     </application>
 
 </manifest>
