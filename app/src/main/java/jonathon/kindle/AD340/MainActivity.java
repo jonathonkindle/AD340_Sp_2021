@@ -27,22 +27,13 @@ public class MainActivity extends AppCompatActivity {
 
         GridView gridView = findViewById(R.id.btnGridView);
         gridView.setAdapter(new ButtonAdapter(this));
-//        gridView.setAdapter(adapter);
-
-//        AdapterView.OnItemClickListener messageClickedHandler = new AdapterView.OnItemClickListener() {
-//            public void onItemClick(AdapterView parent, View v, int position, long id) {
-//                Toast.makeText(MainActivity.this, "you clicked " + btnNames[+position], Toast.LENGTH_SHORT).show();
-//            }
-//        };
-//
-//        gridView.setOnItemClickListener(messageClickedHandler);
     }
 
     public class ButtonAdapter extends BaseAdapter {
-        private Context movieContext;
+        private Context mainContext;
 
         public ButtonAdapter(Context context) {
-            movieContext = context;
+            mainContext = context;
         }
 
         public int getCount() {
@@ -60,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             Button button;
             if (convertView == null) {
-                button = new Button(movieContext);
+                button = new Button(mainContext);
             } else {
                 button = (Button) convertView;
             }
@@ -85,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
             switch (id) {
                 case 0:
                     intent = new Intent(getBaseContext(), MovieListActivity.class);
+                    startActivity(intent);
+                    break;
+                case 2:
+                    intent = new Intent(getBaseContext(), CameraListActivity.class);
                     startActivity(intent);
                     break;
                 default:

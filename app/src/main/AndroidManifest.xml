@@ -3,6 +3,7 @@
     package="jonathon.kindle.AD340">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -29,11 +30,10 @@
             android:name=".MovieDetails"
             android:label="Movie Details"
             android:parentActivityName=".MovieListActivity" />
-
-<!--        <activity -->
-<!--            android:name=".RecyclerActivity"-->
-<!--            android:label="Movies w/ Recycler View"-->
-<!--            android:parentActivityName=".MainActivity" />-->
+        <activity
+            android:name=".CameraListActivity"
+            android:label="Traffic Cameras"
+            android:parentActivityName=".MainActivity" />
 
     </application>
 
